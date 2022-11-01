@@ -6,6 +6,10 @@
     "android": "react-native run-android --port=8089",
     "ios": "react-native run-ios --port=8090",
     "start": "react-native start --port=8088",
+    "build-ios": "npx detox build -c ios",
+    "run-ios": "npx detox test -c ios",
+    "build-android": "npx detox build -c android",
+    "run-android": "npx detox test --record-videos all --take-screenshots all -c android",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
@@ -35,8 +39,10 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
+    "detox": "^19.4.2",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
+    "jest-circus": "^27.4.6",
     "metro-react-native-babel-preset": "0.72.3",
     "react-test-renderer": "18.1.0",
     "typescript": "^4.8.3"

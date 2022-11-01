@@ -101,6 +101,7 @@ export function CoinsScreen() {
       <AppContainer>
         <AppFullSizedBox />
         <TextInput
+          testID="app-search-input"
           style={styles.input}
           onChangeText={val => setText(val)}
           value={text}
@@ -115,6 +116,7 @@ export function CoinsScreen() {
         ) : (
           <>
             <Animated.FlatList
+              testID="app-list"
               onScroll={Animated.event(
                 [{nativeEvent: {contentOffset: {y: scrollY}}}],
                 {useNativeDriver: true},
@@ -161,9 +163,12 @@ export function CoinsScreen() {
                           },
                         ]}>
                         <View style={styles.cardContent}>
-                          <Text style={styles.text}>{item}</Text>
+                          <Text testID="app-coin-symbol" style={styles.text}>
+                            {item}
+                          </Text>
                           {selectedCoin === item ? (
                             <Text
+                              testID="app-close"
                               style={styles.text}
                               onPress={() => {
                                 fadeOut();
@@ -173,6 +178,7 @@ export function CoinsScreen() {
                             </Text>
                           ) : (
                             <Text
+                              testID="app-view"
                               style={styles.text}
                               onPress={() => {
                                 fadeIn();

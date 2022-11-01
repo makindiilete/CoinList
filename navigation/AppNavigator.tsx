@@ -14,27 +14,6 @@ const AppNavigator = () => {
     return (
       <>
         <Tab.Screen
-          name={routes.HOME}
-          component={HomeScreen}
-          options={{
-            tabBarIcon: ({color, focused}) =>
-              focused ? (
-                <AppActiveTab>
-                  <Image
-                    source={require('../assets/images/home_active.png')}
-                    style={{width: 25, height: 25, resizeMode: 'contain'}}
-                  />
-                </AppActiveTab>
-              ) : (
-                <Image
-                  source={require('../assets/images/home.png')}
-                  style={{width: 25, height: 25, resizeMode: 'contain'}}
-                />
-              ),
-          }}
-        />
-
-        <Tab.Screen
           name={routes.COINS}
           component={CoinsScreen}
           options={{
@@ -55,6 +34,28 @@ const AppNavigator = () => {
             headerShown: true,
             headerTitle: 'Coin List',
             headerTintColor: Colors.colorPrimary,
+            tabBarTestID: 'app-header',
+          }}
+        />
+
+        <Tab.Screen
+          name={routes.HOME}
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({color, focused}) =>
+              focused ? (
+                <AppActiveTab>
+                  <Image
+                    source={require('../assets/images/home_active.png')}
+                    style={{width: 25, height: 25, resizeMode: 'contain'}}
+                  />
+                </AppActiveTab>
+              ) : (
+                <Image
+                  source={require('../assets/images/home.png')}
+                  style={{width: 25, height: 25, resizeMode: 'contain'}}
+                />
+              ),
           }}
         />
       </>
