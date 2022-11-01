@@ -11,6 +11,7 @@ import {
   Alert,
   ActivityIndicator,
 } from 'react-native';
+import axios from 'axios';
 import {AppScreen} from '../../components/AppScreen';
 import {AppContainer} from '../../components/AppContainer';
 import {AppFullSizedBox} from '../../components/AppFullSizedBox';
@@ -19,14 +20,13 @@ import {
   widthPercentageToDP,
 } from 'react-native-responsive-screen';
 import Colors from '../../constants/Colors';
-import axios from 'axios';
 
 const {height} = Dimensions.get('screen');
 
 export function CoinsScreen() {
   const scrollY = React.useRef(new Animated.Value(0)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const [coins, setCoins] = useState({});
+  const [coins, setCoins] = useState<{[item: string]: any}>({});
   const [isLoading, setIsLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
   const [selectedCoin, setSelectedCoin] = useState<string | null>(null);
@@ -82,14 +82,12 @@ export function CoinsScreen() {
   }, []);
 
   useEffect(() => {
-    let matchedCoin = {};
+    let matchedCoin: {[coinsKey: string]: any} = {};
     let searchString = text;
     if (searchString !== '') {
       for (const coinsKey in coins) {
         if (coinsKey?.includes(searchString?.toUpperCase())) {
-          // @ts-ignore
           matchedCoin[coinsKey] = coins[coinsKey];
-          // @ts-ignore
           setCoins(matchedCoin);
         }
       }

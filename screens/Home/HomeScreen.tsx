@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
 import {View, StyleSheet} from 'react-native';
 import {AppScreen} from '../../components/AppScreen';
 import Carousel from '../../components/Carousel';
