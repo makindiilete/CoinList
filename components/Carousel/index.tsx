@@ -149,7 +149,7 @@ const Carousel = () => {
                   fontSize: 14,
                 },
               ]}>
-              United State Dollar
+              United States Dollar
             </Text>
           </View>
         </View>

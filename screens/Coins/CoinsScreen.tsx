@@ -107,6 +107,7 @@ export function CoinsScreen() {
           onChangeText={val => setText(val)}
           value={text}
           placeholder="Search Coins"
+          placeholderTextColor={Colors.colorGrey}
         />
         <AppFullSizedBox />
         {isLoading ? (
