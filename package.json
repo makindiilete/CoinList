@@ -7,10 +7,8 @@
     "ios": "react-native run-ios --port=8090",
     "start": "react-native start --port=8088",
     "build-ios": "npx detox build -c ios",
-    "test-ios": "npx detox test -c ios",
     "build-android": "npx detox build -c android",
-    "test-android": "react-native run-android --port=8089 && npx detox test --record-videos all --take-screenshots all -c android",
-    "test": "jest",
+    "test": "react-native run-android --port=8089 && npx detox test --record-videos all --take-screenshots all -c android",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
