@@ -149,6 +149,7 @@ export function CoinsScreen() {
                   inputRange,
                   outputRange: [0, 0, 0, 500],
                 });
+                // @ts-ignore
                 return (
                   <>
                     <Pressable>
@@ -190,7 +191,9 @@ export function CoinsScreen() {
                                 opacity: fadeAnim,
                               },
                             ]}>
-                            <Text style={styles.rate}>Rate: {123}</Text>
+                            <Text style={styles.rate}>
+                              Rate: {Number(coins[item].rate).toFixed(2)}
+                            </Text>
                           </Animated.View>
                         )}
                       </Animated.View>
